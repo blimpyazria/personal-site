@@ -1,0 +1,39 @@
+body {
+    padding-left: 10%;
+    padding-top: 200px;
+    padding-bottom: 0;
+}
+
+ul {
+    font-family: 'Futura PT', sans-serif;
+    font-weight: normal;
+    color: #20ace5;
+    font-size: 15pt;
+}
+
+.introText {
+    font-family: 'Futura PT', sans-serif;
+    font-weight: normal;
+    font-size: 50pt;
+    margin:0;
+}
+
+.introSubtitle{
+    font-family: 'Futura PT', sans-serif;
+    font-weight: bold;
+    font-size: 15pt;
+    margin:-10;
+}
+
+.footer{
+    font-family: 'Futura PT', sans-serif;
+    font-weight: bold;
+    color: #9b9b9b;
+    position: fixed;
+    bottom: 0;
+}
+
+strong{
+    font-weight: bold;
+}
+
