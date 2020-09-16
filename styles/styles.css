@@ -1,32 +1,67 @@
+@keyframes rainbowText{
+    0% {color: #ee6565
+    }
+    25% {color: #f3bb5b
+    }
+    50% {color: #7997f1
+    }
+    75% {color: #eb55f6
+    }
+    100% {color: #f15757
+    }
+}
+
+@keyframes textTransition{
+    0% {top:30px; opacity: 0;}
+    100% {top:0; opacity: 1;}
+}
+
 body {
+    font-family: 'Product Sans', sans-serif;
+    background-color: #f3f3f3;
+    color: #212121;
     padding-left: 10%;
     padding-top: 200px;
     padding-bottom: 0;
+    position:relative;
+    opacity:1;
+    animation-name: textTransition;
+    animation-duration: 1500ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 ul {
-    font-family: 'Futura PT', sans-serif;
+    font-family: inherit;
     font-weight: normal;
     color: #20ace5;
     font-size: 15pt;
+    animation-delay: 200ms;
 }
 
 .introText {
-    font-family: 'Futura PT', sans-serif;
-    font-weight: normal;
+    font-family: inherit;
+    font-weight: bold;
     font-size: 50pt;
     margin:0;
 }
 
+.aWebsiteText{
+    animation-name: rainbowText;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
 .introSubtitle{
-    font-family: 'Futura PT', sans-serif;
+    font-family: inherit;
     font-weight: bold;
     font-size: 15pt;
-    margin:-10;
+    color: inherit;
+    margin:0;
+    animation-delay: 200ms;
 }
 
 .footer{
-    font-family: 'Futura PT', sans-serif;
+    font-family: inherit;
     font-weight: bold;
     color: #9b9b9b;
     position: fixed;
