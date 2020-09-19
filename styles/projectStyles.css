@@ -1,0 +1,204 @@
+body{
+    animation: none;
+}
+
+a{
+    display: inline-block;
+    color:inherit;
+    font-weight: 600;
+    font-size: 13pt;
+    opacity: 0.3;
+    text-decoration: none;
+    transition: opacity 300ms, background-position 1000ms;
+    background-position-x: 100px;
+}
+
+a::after{
+    content: '';
+    width:0;
+    height: 2px;
+    display: block;
+    background:linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
+    transition: 200ms;
+}
+
+a:hover{
+    opacity: 0.9;
+    background:  linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
+    background-position-x: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a:hover::after{
+    width:100%;
+}
+
+#returnButton{
+    padding:20px;
+    animation: none;
+}
+
+#mainContent {
+    position:relative;
+    padding-left: 10%;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    animation-name: textTransition;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    margin: 0 auto;
+    width:80%;
+}
+
+#inputArea{
+    padding-top: 20px;
+    width:100%;
+    max-width: 1200px;
+    min-width: 400px;
+}
+
+#step1{
+    display: inline-block;
+    float:left;
+    width: 45%;
+    min-width: 420px;
+}
+
+#resultsArea{
+    display: none;
+    margin-left:70px;
+    width:45%;
+    min-width: 452px;
+
+    animation-name: none;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+}
+
+#classResultsArea{
+    width:100%;
+}
+
+#otherResultsArea{
+    width:100%;
+}
+
+#receivedDiploma{
+    margin-right: 10%;
+    float: right;
+    text-align: center;
+}
+
+#totalScore{
+    width:160px;
+    padding:15px;
+    margin-right: 10%;
+    background:linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
+    opacity:0.8;
+    color:white;
+    border-radius: 20px;
+    float: right;
+    text-align: center;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 35pt;
+    margin:0;
+}
+
+h2{
+    font-size: 20pt;
+}
+
+.subtitleText{
+    margin-top:5px;
+    font-size:inherit;
+}
+
+.inputDropdown{
+    width:70px;
+    padding:12px;
+    font-family: inherit;
+    font-weight: 700;
+    border: none;
+    background-color: #e9e9e9;
+    border-radius: 20px;
+}
+
+.inputBox{
+    width: 75%;
+
+    float: right;
+    padding: 12px;
+    margin-left: 10px;
+    font-family: inherit;
+    border:none;
+    border-radius: 20px;
+    outline:none;
+}
+
+.submitButton{
+    padding:12px;
+    width:100%;
+
+    font-family: inherit;
+    font-weight: 700;
+    color:white;
+    font-size: 13pt;
+
+    background: #212121;
+    border: none;
+    outline:none;
+    opacity:0.4;
+    border-radius: 20px;
+    cursor:pointer;
+}
+
+.submitButton:hover{
+    background:linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
+    opacity:0.9;
+    transition: all 200ms;
+}
+
+.submitButton:active{
+    transform: scale(0.98);
+    opacity:0.7;
+    transition: all 100ms;
+}
+
+.classResult{
+    width:100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.className{
+    display: inline-block;
+    width:80%;
+    min-width: 300px;
+    padding:15px;
+
+    font-weight: 700;
+
+    background:white;
+    border-radius: 20px 0 0 20px;
+}
+
+.classScore{
+    display: inline-block;
+    width:25px;
+    padding: 15px;
+
+    font-weight: 700;
+    text-align: center;
+    color:white;
+
+    background: #7997f1;
+    border-radius: 0 20px 20px 0;
+}
+
+#overallScore{
+    font-weight: 700;
+}

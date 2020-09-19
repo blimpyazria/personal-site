@@ -1,3 +1,9 @@
+/*
+I have no idea how to layout a CSS file, and am fully making this up as I go.
+Good luck trying to figure out what's going on.
+I don't even know myself.
+*/
+
 @keyframes rainbowText{
     0% {color: #ee6565
     }
@@ -12,35 +18,39 @@
 }
 
 @keyframes textTransition{
-    0% {top:30px; opacity: 0;}
+    0% {top:20px; opacity: 0;}
     100% {top:0; opacity: 1;}
 }
 
 body {
-    font-family: 'Futura PT', 'Trebuchet MS', sans-serif;
+    font-family: 'Montserrat','Futura PT', 'Trebuchet MS', sans-serif;
+    font-size:15pt;
     background-color: #f3f3f3;
     color: #212121;
-    padding-left: 10%;
-    padding-top: 200px;
     padding-bottom: 0;
     position:relative;
     opacity:1;
     animation-name: textTransition;
-    animation-duration: 1500ms;
+    animation-duration: 1000ms;
     animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 ul {
     font-family: inherit;
-    font-weight: normal;
+    font-weight: 500;
     color: #20ace5;
-    font-size: 15pt;
+    font-size: inherit;
     animation-delay: 200ms;
+}
+
+#introSection{
+    padding-left: 10%;
+    padding-top: 200px;
 }
 
 .introText {
     font-family: inherit;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 50pt;
     margin:0;
 }
@@ -53,19 +63,19 @@ ul {
 
 .introSubtitle{
     font-family: inherit;
-    font-weight: bold;
     font-size: 15pt;
     color: inherit;
     margin:0;
     animation-delay: 200ms;
 }
 
-.footer{
+#footer{
     font-family: inherit;
     font-weight: bold;
     color: #9b9b9b;
+    padding-left: 10%;
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
 }
 
 strong{
