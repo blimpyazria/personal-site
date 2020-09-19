@@ -37,10 +37,42 @@ body {
 
 ul {
     font-family: inherit;
-    font-weight: 500;
+    font-weight: 600;
     color: #20ace5;
     font-size: inherit;
     animation-delay: 200ms;
+}
+
+a{
+    display: inline-block;
+    color:inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    opacity: inherit;
+    text-decoration: none;
+    transition: opacity 300ms, background-position 1000ms;
+    background-position-x: 100px;
+}
+
+a::after{
+    content: '';
+    width:0;
+    height: 2px;
+    display: block;
+    background:linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
+    transition: 200ms;
+}
+
+a:hover{
+    opacity: 1;
+    background:  linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
+    background-position-x: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a:hover::after{
+    width:100%;
 }
 
 #introSection{
