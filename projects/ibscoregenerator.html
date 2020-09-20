@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>a random IB score generator</title>
     <link href="../styles/styles.css" rel="stylesheet">
     <link href="../styles/projectStyles.css" rel="stylesheet">
@@ -71,53 +73,84 @@
 
             </div>
 
-            <div id="resultsArea">
-                <h2>... and see your results.</h2>
-                <div id="classResultsArea">
-                    <p class="classResult">
-                        <span class="className" id="className1"></span>
-                        <span class="classScore" id="classScore1">7</span>
-                    </p>
-                    <p class="classResult">
-                        <span class="className" id="className2"></span>
-                        <span class="classScore" id="classScore2">7</span>
-                    </p>
-                    <p class="classResult">
-                        <span class="className" id="className3"></span>
-                        <span class="classScore" id="classScore3">7</span>
-                    </p>
-                    <p class="classResult">
-                        <span class="className" id="className4"></span>
-                        <span class="classScore" id="classScore4">7</span>
-                    </p>
-                    <p class="classResult">
-                        <span class="className" id="className5"></span>
-                        <span class="classScore" id="classScore5">7</span>
-                    </p>
-                    <p class="classResult">
-                        <span class="className" id="className6"></span>
-                        <span class="classScore" id="classScore6">7</span>
-                    </p>
-                </div>
-                <div id="otherResultsArea">
-                    <br>
-                    <p class="extraResult">
-                        <span class="className" id="TOK">TOK</span>
-                        <span class="classScore" id="TokScore">A</span>
-                    </p>
-                    <p class="extraResult">
-                        <span class="className" id="EE">EE</span>
-                        <span class="classScore" id="EEScore">B</span>
-                    </p>
-                    <p id="receivedDiploma">
-                        You received an IB diploma.
-                    </p>
-                    <div id="totalScore">
-                        Total score: <span id="overallScore">45</span>
+            <div id="resultsWrapper">
+                <div id="resultsArea">
+                    <h2>... and see your results.</h2>
+                    <div id="classResultsArea">
+                        <p class="classResult">
+                            <span class="className" id="className1"></span>
+                            <span class="classScore" id="classScore1">7</span>
+                        </p>
+                        <p class="classResult">
+                            <span class="className" id="className2"></span>
+                            <span class="classScore" id="classScore2">7</span>
+                        </p>
+                        <p class="classResult">
+                            <span class="className" id="className3"></span>
+                            <span class="classScore" id="classScore3">7</span>
+                        </p>
+                        <p class="classResult">
+                            <span class="className" id="className4"></span>
+                            <span class="classScore" id="classScore4">7</span>
+                        </p>
+                        <p class="classResult">
+                            <span class="className" id="className5"></span>
+                            <span class="classScore" id="classScore5">7</span>
+                        </p>
+                        <p class="classResult">
+                            <span class="className" id="className6"></span>
+                            <span class="classScore" id="classScore6">7</span>
+                        </p>
+                    </div>
+                    <div id="otherResultsArea">
+                        <br>
+                        <p class="extraResult">
+                            <span class="className" id="TOK">TOK</span>
+                            <span class="classScore" id="TokScore">A</span>
+                        </p>
+                        <p class="extraResult">
+                            <span class="className" id="EE">EE</span>
+                            <span class="classScore" id="EEScore">B</span>
+                        </p>
+                        <p id="receivedDiploma">
+                            You received an IB diploma.
+                        </p>
+                        <div id="totalScore">
+                            Total score: <span id="overallScore">45</span>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
+
+
+        <div id="faqArea">
+            <h2>Any questions?</h2>
+
+            <h3>What is this?</h3>
+            <p class="faqAnswer">
+                It's a site that will predict your (or anyone else's) IB grade based on a completely random algorithm.
+            </p>
+            <br>
+            <h3>Is this real?</h3>
+            <p class="faqAnswer">
+                No.
+                <br>Unless you mean the website itself, which does exist.
+            </p>
+            <br>
+            <h3>I meant, are these my actual grades?</h3>
+            <p class="faqAnswer">
+                No*<br>
+                <span class="specialTiny">*Unless you're an M20 student, in which case this might hold some degree of accuracy.</span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <span class="footerText">a website.</span>
     </div>
 
 </body>

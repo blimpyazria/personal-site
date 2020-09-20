@@ -3,8 +3,11 @@ var a;
 var x;
 var score;
 var sum;
+var casPass = 1;
+var isPass = 1;
 
 function submitClasses(){
+    console.log("--- Log ---");
     document.getElementById("submittingButton").style.display = "none";
     //alert("1");
     x = 0;
@@ -12,9 +15,8 @@ function submitClasses(){
     a = document.getElementById("firstStep");
     //alert("2");
     for(let i = 0; i < a.length-2; i+=2){
-        classes[x] += a.elements[i].value + " " + a.elements[i+1].value;
-       //console.log(i + ": " + a.elements[i].value + " / " + a.elements[i+1].value);
-        console.log(classes[x]);
+        classes[x] += "<strong>" + a.elements[i].value + "</strong> " + a.elements[i+1].value;
+       console.log(i + ": " + a.elements[i].value + " / " + a.elements[i+1].value);
         x++;
     }
     //alert("3");
@@ -31,6 +33,21 @@ function calculate(){
         score[i] = scoreCalc();
         sum+=score[i];
     }
+
+    console.log("Class score: " + sum);
+
+    score[6] = tokEECalc();
+    score[7] = tokEECalc();
+
+    var te = tokEEScoreCalc()
+
+    if(te > 0) sum += te;
+    else isPass = 0;
+
+    console.log("TOK/EE score: " + te);
+    console.log("Total score: " + sum);
+
+    if((Math.floor(Math.random() * 100) + 1) < 5) casPass = 0;
 }
 
 function appear(){
@@ -50,6 +67,9 @@ function appear(){
     document.getElementById("classScore4").innerHTML = score[3];
     document.getElementById("classScore5").innerHTML = score[4];
     document.getElementById("classScore6").innerHTML = score[5];
+
+    document.getElementById("TokScore").innerHTML = score[6];
+    document.getElementById("EEScore").innerHTML = score[7];
 
     document.getElementById("overallScore").innerHTML = sum;
 
@@ -71,6 +91,40 @@ function scoreCalc(){
     else if(rawValue > 7) return 3;
     else if(rawValue > 2) return 2;
     else return 1;
+}
+
+function tokEECalc(){
+    var rawValue = Math.floor(Math.random() * 100) + 1;
+    if(rawValue > 90) return 'A';
+    else if(rawValue > 66) return 'B';
+    else if(rawValue > 27) return 'C';
+    else if(rawValue > 2) return 'D';
+    else return 'E';
+}
+
+function tokEEScoreCalc(){
+    var tokEE = score[6] + score[7];
+    tokEE = tokEE.split('');
+    tokEE = tokEE.sort();
+    tokEE = tokEE.join('');
+    console.log("TOK/EE: " + tokEE);
+    switch(tokEE){
+        case('AA'): return 3;
+        case('AB'): return 3;
+        case('AC'): return 2;
+        case('AD'): return 2;
+        case('AE'): return -1;
+        case('BB'): return 2;
+        case('BC'): return 2;
+        case('BD'): return 1;
+        case('BE'): return -1;
+        case('CC'): return 1;
+        case('CD'): return 0;
+        case('CE'): return -1;
+        case('DD'): return 0;
+        case('DE'): return -1;
+        case('EE'): return -1;
+    }
 }
 
 function printTest(){

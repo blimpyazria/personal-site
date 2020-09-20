@@ -4,6 +4,11 @@ Good luck trying to figure out what's going on.
 I don't even know myself.
 */
 
+:root{
+    --bg: #f3f3f3;
+    --text: #212121;
+}
+
 @keyframes rainbowText{
     0% {color: #ee6565
     }
@@ -25,8 +30,8 @@ I don't even know myself.
 body {
     font-family: 'Montserrat','Futura PT', 'Trebuchet MS', sans-serif;
     font-size:15pt;
-    background-color: #f3f3f3;
-    color: #212121;
+    background-color: var(--bg);
+    color: var(--text);
     padding-bottom: 0;
     position:relative;
     opacity:1;
@@ -50,7 +55,8 @@ a{
     font-size: inherit;
     opacity: inherit;
     text-decoration: none;
-    transition: opacity 300ms, background-position 1000ms;
+    transition: opacity 450ms, background-position 1500ms;
+    transition-timing-function: cubic-bezier(.26,0,.03,1.01);
     background-position-x: 100px;
 }
 
@@ -60,7 +66,8 @@ a::after{
     height: 2px;
     display: block;
     background:linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
-    transition: 200ms;
+    transition: 300ms;
+    transition-timing-function: cubic-bezier(.26,0,.03,1.01);
 }
 
 a:hover{
@@ -101,13 +108,16 @@ a:hover::after{
     animation-delay: 200ms;
 }
 
-#footer{
+.footerText{
     font-family: inherit;
+    font-size: 10pt;
     font-weight: bold;
-    color: #9b9b9b;
-    padding-left: 10%;
-    position: fixed;
-    bottom: 10px;
+    color: #cdcdcd;
+}
+
+#footer{
+    width: 100px;
+    margin:0 auto;
 }
 
 strong{

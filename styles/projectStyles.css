@@ -1,10 +1,17 @@
+:root{
+    --actionAccent: #cfd8e0;
+
+}
+
 body{
     animation: none;
 }
 
 #returnButton{
+    position: relative;
     padding:20px;
     animation: none;
+
 }
 
 a{
@@ -18,40 +25,53 @@ a:hover{
 }
 
 #mainContent {
+    width:80%;
+    max-width: 1200px;
+    height:auto;
     position:relative;
-    padding-left: 10%;
-    padding-top: 40px;
-    padding-bottom: 80px;
+
+    padding: 50px 0 150px;
+    margin: 0 auto;
+
     animation-name: textTransition;
     animation-duration: 1000ms;
     animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-    margin: 0 auto;
-    width:80%;
 }
 
 #inputArea{
-    padding-top: 20px;
-    width:100%;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    height:auto;
+
     max-width: 1200px;
     min-width: 400px;
 }
 
 #step1{
-    display: inline-block;
-    float:left;
     width: 45%;
+    height:auto;
     min-width: 420px;
+
+    display: inline-block;
+    margin-right: 70px;
+    vertical-align: top;
 }
 
-#resultsArea{
-    display: none;
-    margin-left:70px;
-    width:45%;
+#resultsWrapper {
+    width: 45%;
+    height:auto;
+
+    display: inline-block;
     min-width: 452px;
+    background-color: var(--bg);
 
     animation-name: none;
     animation-duration: 0s;
     animation-timing-function: linear;
+}
+
+#resultsArea{
+    display: none;
 }
 
 #classResultsArea{
@@ -80,6 +100,10 @@ a:hover{
     text-align: center;
 }
 
+#faqArea{
+    width:100%;
+}
+
 h1{
     font-weight: 700;
     font-size: 35pt;
@@ -88,6 +112,27 @@ h1{
 
 h2{
     font-size: 20pt;
+}
+
+h3{
+    display: inline-block;
+    font-size:15pt;
+    margin:0;
+
+    color: inherit;
+
+    transition: all 400ms;
+    transition-timing-function: cubic-bezier(.26,0,.03,1.01);
+}
+
+h3:hover{
+    background:  linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+strong{
+    font-weight:700;
 }
 
 .subtitleText{
@@ -101,8 +146,15 @@ h2{
     font-family: inherit;
     font-weight: 700;
     border: none;
+    outline: none;
     background-color: #e9e9e9;
     border-radius: 20px;
+
+    transition: all 200ms;
+}
+
+.inputDropdown:hover{
+    background-color: var(--actionAccent);
 }
 
 .inputBox{
@@ -115,6 +167,12 @@ h2{
     border:none;
     border-radius: 20px;
     outline:none;
+
+    transition: all 200ms;
+}
+
+.inputBox:hover{
+    background-color: var(--actionAccent);
 }
 
 .submitButton{
@@ -158,7 +216,7 @@ h2{
     min-width: 300px;
     padding:15px;
 
-    font-weight: 700;
+    font-weight: 500;
 
     background:white;
     border-radius: 20px 0 0 20px;
@@ -175,6 +233,15 @@ h2{
 
     background: #7997f1;
     border-radius: 0 20px 20px 0;
+}
+
+.faqAnswer{
+    margin:0;
+}
+
+.specialTiny{
+    font-size: 8pt;
+    color: #bababa;
 }
 
 #overallScore{
