@@ -1,3 +1,9 @@
+/*
+Hi there. Welcome to one of my CSS files.
+If you're reading this comment, congratulations.
+It's probably the only part of this file that actually makes sense.
+ */
+
 :root{
     --actionAccent: #cfd8e0;
 
@@ -43,6 +49,8 @@ a:hover{
     padding-bottom: 100px;
     height:auto;
 
+    width:auto;
+
     max-width: 1200px;
     min-width: 400px;
 }
@@ -50,10 +58,11 @@ a:hover{
 #step1{
     width: 45%;
     height:auto;
-    min-width: 420px;
+    min-width: 440px;
 
     display: inline-block;
     margin-right: 70px;
+    margin-bottom: 70px;
     vertical-align: top;
 }
 
@@ -62,7 +71,7 @@ a:hover{
     height:auto;
 
     display: inline-block;
-    min-width: 452px;
+    min-width: 440px;
     background-color: var(--bg);
 
     animation-name: none;
@@ -75,11 +84,21 @@ a:hover{
 }
 
 #classResultsArea{
-    width:100%;
+    margin:0;
 }
 
 #otherResultsArea{
-    width:100%;
+    margin:0;
+}
+
+#otherResultsLeft{
+    width:48%;
+    display:inline-block;
+}
+
+#otherResultsRight{
+    width:48%;
+    display:inline-block;
 }
 
 #receivedDiploma{
@@ -102,6 +121,10 @@ a:hover{
 
 #faqArea{
     width:100%;
+}
+
+#submittingButton{
+    display: block;
 }
 
 h1{
@@ -141,9 +164,11 @@ strong{
 }
 
 .inputDropdown{
-    width:70px;
+    width:15%;
+    min-width:75px;
     padding:12px;
     font-family: inherit;
+    font-size:20px;
     font-weight: 700;
     border: none;
     outline: none;
@@ -159,11 +184,14 @@ strong{
 
 .inputBox{
     width: 75%;
+    min-width: 250px;
 
-    float: right;
+    float:right;
+
     padding: 12px;
     margin-left: 10px;
     font-family: inherit;
+    font-size: 20px;
     border:none;
     border-radius: 20px;
     outline:none;
@@ -214,7 +242,7 @@ strong{
     display: inline-block;
     width:80%;
     min-width: 300px;
-    padding:15px;
+    padding:12px;
 
     font-weight: 500;
 
@@ -224,8 +252,8 @@ strong{
 
 .classScore{
     display: inline-block;
-    width:25px;
-    padding: 15px;
+    width:22px;
+    padding: 12px;
 
     font-weight: 700;
     text-align: center;
@@ -233,6 +261,35 @@ strong{
 
     background: #7997f1;
     border-radius: 0 20px 20px 0;
+}
+
+.otherName{
+    display: inline-block;
+    width:55%;
+    padding:12px;
+
+    font-weight: 500;
+
+    background:white;
+    border-radius: 20px 0 0 20px;
+}
+
+.otherScore{
+    display: inline-block;
+    width:25px;
+    padding: 12px;
+
+    font-weight: 700;
+    text-align: center;
+    color:white;
+
+    background: #7997f1;
+    border-radius: 0 20px 20px 0;
+}
+
+.extraResultRight{
+    width: auto;
+    right:0;
 }
 
 .faqAnswer{

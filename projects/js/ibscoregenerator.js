@@ -1,3 +1,8 @@
+/*
+Hi there. Welcome to my javascript.
+It's nearly as bad as my CSS.
+ */
+
 var classes;
 var a;
 var x;
@@ -6,26 +11,27 @@ var sum;
 var casPass = 1;
 var isPass = 1;
 
+var runAmounts = 0;
+
+//When the button is pressed, do stuff.
 function submitClasses(){
+    runAmounts++;
+    console.log("--" + runAmounts + " runs--");
+
     console.log("--- Log ---");
-    document.getElementById("submittingButton").style.display = "none";
-    //alert("1");
     x = 0;
     classes = ["", "", "", "", "", ""];
     a = document.getElementById("firstStep");
-    //alert("2");
     for(let i = 0; i < a.length-2; i+=2){
         classes[x] += "<strong>" + a.elements[i].value + "</strong> " + a.elements[i+1].value;
        console.log(i + ": " + a.elements[i].value + " / " + a.elements[i+1].value);
         x++;
     }
-    //alert("3");
-    //printTest();
     calculate();
-
     appear();
 }
 
+//Calculates scores.
 function calculate(){
     score = [];
     sum = 0;
@@ -50,6 +56,7 @@ function calculate(){
     if((Math.floor(Math.random() * 100) + 1) < 5) casPass = 0;
 }
 
+//Makes the results stuff appear. Also makes the button text change for the lols.
 function appear(){
     var y = document.getElementById("resultsArea");
     y.style.display = "none";
@@ -78,8 +85,25 @@ function appear(){
     y.style.animationDuration = "1000ms";
     y.style.animationTimingFunction = "cubic-bezier(0.22, 1, 0.36, 1)";
 
+    var buttonText = document.getElementById("submittingButton");
+
+    //button memes because i don't need to make my javascript efficient anyway.
+    if(runAmounts < 5) buttonText.value = "Try again?";
+    else if(runAmounts < 10) buttonText.value = "Okay, you should stop now.";
+    else if(runAmounts < 20) buttonText.value = "You don't get this many retries in real life.";
+    else if(runAmounts < 40) buttonText.value = "What are you doing?";
+    else if(runAmounts < 60) buttonText.value = "Go study or something.";
+    else if(runAmounts < 100) buttonText.value = "Maybe eventually you'll get a 45.";
+    else if(runAmounts < 101) buttonText.value = "Congrats. You've clicked a button 100 times. Yay.";
+    else if(runAmounts < 102) buttonText.value = "Might as well start counting.";
+    else if(runAmounts < 1000) buttonText.value = runAmounts;
+    else if(runAmounts < 1001) buttonText.value = "If you make it here through clicking, you are insane.";
+    else if(runAmounts < 1002) buttonText.value = "Ok, we're done. Go outside. Don't refresh.";
+    else buttonText.style.display = "none";
+
 }
 
+//Calculates individual scores for a class.
 function scoreCalc(){
     //Scores based on the average percentage of IBDP candidates who score in a specific grade boundary.
     //Yes, I could probably vary this based on the class, but that's too much effort.
@@ -125,13 +149,4 @@ function tokEEScoreCalc(){
         case('DE'): return -1;
         case('EE'): return -1;
     }
-}
-
-function printTest(){
-    //alert("4");
-    let print = "";
-    for(let i = 0; i < classes.length; i++){
-        print += classes[i] + "<br>";
-    }
-    document.getElementById("textTest").innerHTML = print;
 }

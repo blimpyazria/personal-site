@@ -1,3 +1,8 @@
+<!--
+HTML stands for Hypertext Markup Language, but it can also probably stand for "Help, This Makes Life (worse)".
+That was a terrible joke. I'm sorry.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,14 +109,28 @@
                     </div>
                     <div id="otherResultsArea">
                         <br>
-                        <p class="extraResult">
-                            <span class="className" id="TOK">TOK</span>
-                            <span class="classScore" id="TokScore">A</span>
-                        </p>
-                        <p class="extraResult">
-                            <span class="className" id="EE">EE</span>
-                            <span class="classScore" id="EEScore">B</span>
-                        </p>
+                        <div id="otherResultsLeft">
+                            <p class="extraResultLeft">
+                                <span class="otherName" id="TOK">TOK</span>
+                                <span class="otherScore" id="TokScore">A</span>
+                            </p>
+
+                            <p class="extraResultLeft">
+                                <span class="otherName" id="CAS">CAS</span>
+                                <span class="otherScore" id="CASresult">Y</span>
+                            </p>
+                        </div>
+                        <div id="otherResultsRight">
+                            <p class="extraResultRight">
+                                <span class="otherName" id="EE">EE</span>
+                                <span class="otherScore" id="EEScore">B</span>
+                            </p>
+
+                            <p class="extraResultRight">
+                                <span class="otherName" id="Total">Final:</span>
+                                <span class="otherScore" id="TotalScore">B</span>
+                            </p>
+                        </div>
                         <p id="receivedDiploma">
                             You received an IB diploma.
                         </p>
