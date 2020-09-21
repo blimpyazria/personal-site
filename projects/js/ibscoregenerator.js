@@ -61,6 +61,13 @@ function appear(){
     var y = document.getElementById("resultsArea");
     y.style.display = "none";
 
+	/*
+	Yes, if you write HTML tags in the text boxes, you can do funky stuff. 
+	I could make this .innerText rather than innerHTML, but that breaks the stupid workaround that I have for
+	bolding the HL/SL text by adding <strong> tags. 
+	I'm too lazy to fix it. It'll happen eventually, I guess.
+	Only web developers are going to notice anyways.
+	*/
     document.getElementById("className1").innerHTML = classes[0];
     document.getElementById("className2").innerHTML = classes[1];
     document.getElementById("className3").innerHTML = classes[2];
