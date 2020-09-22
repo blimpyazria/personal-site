@@ -76,6 +76,8 @@ That was a terrible joke. I'm sorry.
                     <input type="submit" class="submitButton" id="submittingButton" onclick="submitClasses()" value="Done!">
                 </form>
 
+                <p id="contentError">You actually have to input some classes.</p>
+
             </div>
 
             <div id="resultsWrapper">
@@ -126,17 +128,17 @@ That was a terrible joke. I'm sorry.
                                 <span class="otherScore" id="EEScore">B</span>
                             </p>
 
-                            <p class="extraResultRight">
-                                <span class="otherName" id="Total">Final:</span>
-                                <span class="otherScore" id="TotalScore">B</span>
+                            <p class="extraResultRight" id="totalScore">
+                                Total score: <span id="overallScore">45</span>
                             </p>
                         </div>
-                        <p id="receivedDiploma">
+                        <p class="diplomaResult" id="failConditions">
+
+                        </p>
+                        <p class="diplomaResult" id="diplomaReceived">
                             You received an IB diploma.
                         </p>
-                        <div id="totalScore">
-                            Total score: <span id="overallScore">45</span>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -169,7 +171,7 @@ That was a terrible joke. I'm sorry.
     </div>
 
     <div id="footer">
-        <span class="footerText">a website.</span>
+        <span class="footerText">made by <a href="https://andrewqiu.com">andrew qiu</a>.</span>
     </div>
 
 </body>

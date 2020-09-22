@@ -8,27 +8,53 @@ var a;
 var x;
 var score;
 var sum;
-var casPass = 1;
-var isPass = 1;
+var casPass;
+var isPass;
+var passMessage;
 
 var runAmounts = 0;
 
 //When the button is pressed, do stuff.
 function submitClasses(){
+    a = document.getElementById("firstStep");
+
+    if(checkIfEmpty() === true){
+        document.getElementById("contentError").style.display = "block";
+        console.log("No classes.");
+        return false;
+    }
+
+    document.getElementById("contentError").style.display = "none";
+
+    document.getElementById("totalScore").style.background = "var(--gradientAccent)";
+    casPass = 1;
+    isPass = 1;
+
     runAmounts++;
-    console.log("--" + runAmounts + " runs--");
+    console.log("\n--" + runAmounts + " runs--");
 
     console.log("--- Log ---");
     x = 0;
     classes = ["", "", "", "", "", ""];
-    a = document.getElementById("firstStep");
+
     for(let i = 0; i < a.length-2; i+=2){
         classes[x] += "<strong>" + a.elements[i].value + "</strong> " + a.elements[i+1].value;
        console.log(i + ": " + a.elements[i].value + " / " + a.elements[i+1].value);
         x++;
     }
+
     calculate();
+
+    passCheck();
+
     appear();
+}
+
+function checkIfEmpty(){
+    for(let i = 0; i < a.length-2; i+=2){
+        if(a.elements[i+1].value.length === 0) return true;
+    }
+    return false;
 }
 
 //Calculates scores.
@@ -48,12 +74,40 @@ function calculate(){
     var te = tokEEScoreCalc()
 
     if(te > 0) sum += te;
-    else isPass = 0;
 
     console.log("TOK/EE score: " + te);
     console.log("Total score: " + sum);
 
-    if((Math.floor(Math.random() * 100) + 1) < 5) casPass = 0;
+    if((Math.floor(Math.random() * 100) + 1) < 5){
+        casPass = 0;
+    }
+}
+
+function passCheck(){
+    document.getElementById("CASresult").style.background = "var(--resultColor)";
+
+    passMessage = "";
+    if(sum < 24) {
+        passMessage += "You didn't meet the minimum score of 24.\n";
+        document.getElementById("totalScore").style.background = "var(--resultColorFail)";
+        isPass = 0;
+    }
+    if(casPass === 0) {
+        passMessage += "You didn't meet the CAS requirement.\n";
+        document.getElementById("CASresult").style.background = "var(--resultColorFail)";
+        isPass = 0;
+    }
+    if(tokEEScoreCalc() === -1) {
+        passMessage += "You received a failing condition in EE/TOK.\n";
+        isPass = 0;
+    }
+
+    for(let i = 0; i < 6; i++){
+        if(score[i] === 1){
+            passMessage += "You received a failing score in " + document.getElementById("firstStep").elements[(i*2)+1].value + ".\n";
+            isPass = 0;
+        }
+    }
 }
 
 //Makes the results stuff appear. Also makes the button text change for the lols.
@@ -87,6 +141,14 @@ function appear(){
 
     document.getElementById("overallScore").innerHTML = sum;
 
+    if(casPass === 1) document.getElementById("CASresult").innerHTML = "Y";
+    else document.getElementById("CASresult").innerHTML = "N";
+
+    document.getElementById("failConditions").innerText = passMessage;
+
+    if(isPass === 1) document.getElementById("diplomaReceived").innerHTML = "<strong>You received an IB diploma.</strong>";
+    else document.getElementById("diplomaReceived").innerHTML = "<strong>You did not receive an IB diploma.</strong>";
+
     y.style.display = "inline-block";
     y.style.animationName = "textTransition";
     y.style.animationDuration = "1000ms";
@@ -107,7 +169,6 @@ function appear(){
     else if(runAmounts < 1001) buttonText.value = "If you make it here through clicking, you are insane.";
     else if(runAmounts < 1002) buttonText.value = "Ok, we're done. Go outside. Don't refresh.";
     else buttonText.style.display = "none";
-
 }
 
 //Calculates individual scores for a class.
