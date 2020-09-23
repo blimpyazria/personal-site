@@ -50,6 +50,7 @@ function submitClasses(){
     appear();
 }
 
+//Makes sure all boxes are filled.
 function checkIfEmpty(){
     for(let i = 0; i < a.length-2; i+=2){
         if(a.elements[i+1].value.length === 0) return true;
@@ -83,13 +84,13 @@ function calculate(){
     }
 }
 
+//Checks for any diploma failing conditions
 function passCheck(){
     document.getElementById("CASresult").style.background = "var(--resultColor)";
 
     passMessage = "";
     if(sum < 24) {
         passMessage += "You didn't meet the minimum score of 24.\n";
-        document.getElementById("totalScore").style.background = "var(--resultColorFail)";
         isPass = 0;
     }
     if(casPass === 0) {
@@ -111,9 +112,9 @@ function passCheck(){
 }
 
 //Makes the results stuff appear. Also makes the button text change for the lols.
+//If you're reading this, and you know a better way to do this than document.getElementById repeated 20 times, please get in touch.
 function appear(){
     var y = document.getElementById("resultsArea");
-    y.style.display = "none";
 
 	/*
 	Yes, if you write HTML tags in the text boxes, you can do funky stuff. 
@@ -129,30 +130,32 @@ function appear(){
     document.getElementById("className5").innerHTML = classes[4];
     document.getElementById("className6").innerHTML = classes[5];
 
-    document.getElementById("classScore1").innerHTML = score[0];
-    document.getElementById("classScore2").innerHTML = score[1];
-    document.getElementById("classScore3").innerHTML = score[2];
-    document.getElementById("classScore4").innerHTML = score[3];
-    document.getElementById("classScore5").innerHTML = score[4];
-    document.getElementById("classScore6").innerHTML = score[5];
+    document.getElementById("classScore1").innerText = score[0];
+    document.getElementById("classScore2").innerText = score[1];
+    document.getElementById("classScore3").innerText = score[2];
+    document.getElementById("classScore4").innerText = score[3];
+    document.getElementById("classScore5").innerText = score[4];
+    document.getElementById("classScore6").innerText = score[5];
 
-    document.getElementById("TokScore").innerHTML = score[6];
-    document.getElementById("EEScore").innerHTML = score[7];
+    document.getElementById("TokScore").innerText = score[6];
+    document.getElementById("EEScore").innerText = score[7];
 
-    document.getElementById("overallScore").innerHTML = sum;
+    document.getElementById("overallScore").innerText = sum;
 
-    if(casPass === 1) document.getElementById("CASresult").innerHTML = "Y";
-    else document.getElementById("CASresult").innerHTML = "N";
+    if(casPass === 1) document.getElementById("CASresult").innerText = "Y";
+    else document.getElementById("CASresult").innerText = "N";
 
     document.getElementById("failConditions").innerText = passMessage;
 
     if(isPass === 1) document.getElementById("diplomaReceived").innerHTML = "<strong>You received an IB diploma.</strong>";
-    else document.getElementById("diplomaReceived").innerHTML = "<strong>You did not receive an IB diploma.</strong>";
+    else{
+        document.getElementById("diplomaReceived").innerHTML = "<strong>You did not receive an IB diploma.</strong>";
+        document.getElementById("totalScore").style.background = "var(--resultColorFail)";
+    }
 
+    //Animates in on first run
     y.style.display = "inline-block";
     y.style.animationName = "textTransition";
-    y.style.animationDuration = "1000ms";
-    y.style.animationTimingFunction = "cubic-bezier(0.22, 1, 0.36, 1)";
 
     var buttonText = document.getElementById("submittingButton");
 
@@ -173,8 +176,22 @@ function appear(){
 
 //Calculates individual scores for a class.
 function scoreCalc(){
-    //Scores based on the average percentage of IBDP candidates who score in a specific grade boundary.
-    //Yes, I could probably vary this based on the class, but that's too much effort.
+
+    var rawValue = Math.floor(Math.random() * 100) + 1;
+
+    if(rawValue > 80) return 7;
+    else if(rawValue > 60) return 6;
+    else if(rawValue > 45) return 5;
+    else if(rawValue > 20) return 4;
+    else if(rawValue > 7) return 3;
+    else if(rawValue > 3) return 2;
+    else return 1;
+
+    /*
+    This originally used a calculation that was roughly similar to the average percentage of people who receive each grade.
+    But 99% of runs would end up giving a total 25-35, which was kinda boring.
+    Now it uses my own custom curve, but I'm keeping the old calculation here in case I ever need it for some reason.
+
     var rawValue = Math.floor(Math.random() * 100) + 1;
     if(rawValue > 92) return 7;
     else if(rawValue > 72) return 6;
@@ -183,8 +200,10 @@ function scoreCalc(){
     else if(rawValue > 7) return 3;
     else if(rawValue > 2) return 2;
     else return 1;
+     */
 }
 
+//Calculates EE/TOK letter scores.
 function tokEECalc(){
     var rawValue = Math.floor(Math.random() * 100) + 1;
     if(rawValue > 90) return 'A';
@@ -194,11 +213,15 @@ function tokEECalc(){
     else return 'E';
 }
 
+//Calculates EE/TOK numeric score or fail condition.
 function tokEEScoreCalc(){
     var tokEE = score[6] + score[7];
+
+    //Puts highest grade first. Just to reduce the number of cases I need.
     tokEE = tokEE.split('');
     tokEE = tokEE.sort();
     tokEE = tokEE.join('');
+
     console.log("TOK/EE: " + tokEE);
     switch(tokEE){
         case('AA'): return 3;
