@@ -32,7 +32,7 @@ body{
 }
 
 #mainContent {
-    width:80vw;
+    width:80%;
     max-width: 1200px;
     height:auto;
     position:relative;
@@ -57,8 +57,9 @@ body{
 }
 
 #step1{
-    width: clamp(100px, 45%, 1000px);
+    width: 45%;
     height:auto;
+    min-width:440px;
 
     display: inline-block;
     margin-right: 70px;
@@ -194,7 +195,8 @@ strong{
 }
 
 .inputBox{
-    width: clamp(100px, 75%, 100%);
+    width: 75%);
+    min-width: 250px;
 
     float:right;
 
