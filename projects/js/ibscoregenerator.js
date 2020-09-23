@@ -206,10 +206,10 @@ function scoreCalc(){
 //Calculates EE/TOK letter scores.
 function tokEECalc(){
     var rawValue = Math.floor(Math.random() * 100) + 1;
-    if(rawValue > 90) return 'A';
-    else if(rawValue > 66) return 'B';
-    else if(rawValue > 27) return 'C';
-    else if(rawValue > 2) return 'D';
+    if(rawValue > 80) return 'A';
+    else if(rawValue > 60) return 'B';
+    else if(rawValue > 25) return 'C';
+    else if(rawValue > 10) return 'D';
     else return 'E';
 }
 
