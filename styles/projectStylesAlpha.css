@@ -4,7 +4,7 @@ If you're reading this comment, congratulations.
 It's probably the only part of this file that actually makes sense.
  */
 
-:root{
+:root{                              
     --actionAccent: #cfd8e0;
     --resultColor: #7997f1;
     --resultColorFail: #f66161;
@@ -46,6 +46,8 @@ body{
 }
 
 #inputArea{
+    displaY: flex;
+
     padding-top: 40px;
     padding-bottom: 100px;
     height:auto;
@@ -61,7 +63,6 @@ body{
     height:auto;
     min-width:440px;
 
-    display: inline-block;
     margin-right: 70px;
     margin-bottom: 70px;
     vertical-align: top;
@@ -71,7 +72,6 @@ body{
     width: 45%;
     height:auto;
 
-    display: inline-block;
     min-width: 440px;
     background-color: var(--bg);
 
@@ -245,6 +245,7 @@ strong{
 }
 
 .classResult{
+    display: inline-block;
     width:100%;
     margin-left: 0;
     margin-right: 0;
