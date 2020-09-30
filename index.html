@@ -2,31 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>A happy website</title>
-    <link href="styles/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:0,300,500,600,700" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Andrew Qiu</title>
+
+    <meta name="author" content="Andrew Qiu">
+    <meta name="description" content="A website for things.">
+
+    <meta property="og:title" content="Andrew Qiu">
+    <meta property="og:description" content="A website for things.">
+    <meta property="og:url" content="/index.html">
+    <meta property="og:site_name" content="Andrew Qiu">
+
+    <link href="styles/stylesAlpha.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+
+    <script src="js/landingAnimations.js"></script>
 </head>
-<body>
+<body onload="gradientAnimator()">
+    <div id="topSection">
+        <div class="textWrapper">
+            <div id="introText" class="verticalCenter">
+                <h1>
+                    Hi, I'm <strong>Andrew Q</strong> and (insert cool sounding thing here)
+                </h1>
+            </div>
+        </div>
+    </div>
 
-<div id="introSection">
-    <h1 class="introText">
-        This is <span class="aWebsiteText">a website</span>.
-    </h1>
+    <div id="midSection">
+        <div class="textWrapper">
+            <h2>This is my landing page.</h2>
+            <p>
+            And nothing else. This doesn't link to anything. There's nothing else here yet lol.
+            </p>
 
-    <p class="introSubtitle">
-        Your wellbeing goals for today:
-    <ul>
-        <li>Be happy.</li>
-        <li>Be loved.</li>
-        <li><a href="https://www.google.com/search?q=how+to+be+more+wholesome">Be wholesome.</a></li>
-    </ul>
-    </p>
-</div>
+        </div>
+        <p class="textWrapper">
+    </div>
 
-<div id="footer">
-    <span class="footerText">ayaya.</span>
-</div>
-
-
+    <div id="footer">
+        <span class="footerText">ayaya.</span>
+    </div>
 </body>
 </html>
