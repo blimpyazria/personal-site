@@ -18,11 +18,13 @@ var runAmounts = 0;
 function submitClasses(){
     a = document.getElementById("firstStep");
 
+    /*
     if(checkIfEmpty() === true){
         document.getElementById("contentError").style.display = "block";
         console.log("No classes.");
         return false;
     }
+     */
 
     document.getElementById("contentError").style.display = "none";
 
@@ -53,7 +55,9 @@ function submitClasses(){
 //Makes sure all boxes are filled.
 function checkIfEmpty(){
     for(let i = 0; i < a.length-2; i+=2){
-        if(a.elements[i+1].value.length === 0) return true;
+        if(a.elements[i+1].value.length === 0){
+            return true;
+        }
     }
     return false;
 }
@@ -154,7 +158,7 @@ function appear(){
     }
 
     //Animates in on first run
-    y.style.display = "inline-block";
+    y.style.display = "flex";
     y.style.animationName = "textTransition";
 
     var buttonText = document.getElementById("submittingButton");

@@ -1,0 +1,132 @@
+/*
+I have no idea how to layout a CSS file, and am fully making this up as I go.
+Good luck trying to figure out what's going on.
+I don't even know myself.
+
+
+:root{
+    --bg: #f3f3f3;
+    --text: #212121;
+}
+
+@keyframes rainbowText{
+    0% {color: #ee6565
+    }
+    25% {color: #f3bb5b
+    }
+    50% {color: #7997f1
+    }
+    75% {color: #eb55f6
+    }
+    100% {color: #f15757
+    }
+}
+
+@keyframes textTransition{
+    0% {top:20px; opacity: 0;}
+    100% {top:0; opacity: 1;}
+}
+
+body {
+    font-family: 'Soleil','Montserrat', 'Trebuchet MS', sans-serif;
+    font-size:15pt;
+    background-color: var(--bg);
+    color: var(--text);
+    padding-bottom: 0;
+    position:relative;
+    opacity:1;
+    animation-name: textTransition;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+ul {
+    font-family: inherit;
+    font-weight: 600;
+    color: #20ace5;
+    font-size: inherit;
+    animation-delay: 200ms;
+}
+
+a{
+    display: inline-block;
+    color:inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    opacity: inherit;
+    text-decoration: none;
+    transition: opacity 450ms, background-position 1500ms;
+    transition-timing-function: cubic-bezier(.26,0,.03,1.01);
+    background-position-x: 100px;
+}
+
+a::after{
+    content: '';
+    width:0;
+    height: 2px;
+    display: block;
+    background:linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
+    transition: 300ms;
+    transition-timing-function: cubic-bezier(.26,0,.03,1.01);
+}
+
+a:hover{
+    opacity: 1;
+    background:  linear-gradient(90deg, rgba(97,73,194,1) 0%, rgba(225,0,255,1) 100%);
+    background-position-x: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a:hover::after{
+    width:100%;
+}
+
+#introSection{
+    padding-left: 10%;
+    padding-top: 200px;
+}
+
+.introText {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 50pt;
+    margin:0;
+}
+
+.aWebsiteText{
+    animation-name: rainbowText;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.introSubtitle{
+    font-family: inherit;
+    font-size: 15pt;
+    color: inherit;
+    margin:0;
+    animation-delay: 200ms;
+}
+
+.footerText{
+    font-family: inherit;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #cdcdcd;
+}
+
+.fullPageImage{
+    max-width:100%;
+    max-height: 100%;
+}
+
+#footer{
+    text-align: center;
+    margin:0 auto;
+}
+
+strong{
+    font-weight: bold;
+}
+
+ */
