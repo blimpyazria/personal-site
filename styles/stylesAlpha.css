@@ -73,7 +73,7 @@ body {
     color: var(--darkText);
 
     opacity:1;
-    /*animation-name: textTransition;*/
+    animation-name: textTransition;
     animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -120,7 +120,7 @@ a:hover::after{
 }
 
 h1{
-    font-weight: 400;
+    font-weight: 700;
     font-size: var(--fontsize-3xl);
 }
 
@@ -138,16 +138,6 @@ h4{
 
 strong{
     font-weight: 700;
-    opacity: 1;
-
-    background:  var(--bgGradientText);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    -webkit-animation: bgAnimation var(--gradientTime) ease infinite;
-    -moz-animation: bgAnimation var(--gradientTime) ease infinite;
-    animation: bgAnimation var(--gradientTime) ease infinite;
 }
 
 #topSection{
@@ -179,6 +169,13 @@ strong{
     color: var(--lighterText);
 }
 
+#footer{
+    text-align: center;
+    margin:0 auto;
+    padding-bottom: 10px;
+}
+
+
 .textWrapper{
     height: auto;
     width: clamp(300px, 70%, 1500px);
@@ -194,12 +191,18 @@ strong{
     -ms-transform: translateY(-50%);
 }
 
-#footer{
-    text-align: center;
-    margin:0 auto;
+.fancyBoldGradientText{
+    font-weight: 700;
+    opacity: 1;
+
+    background:  var(--bgGradientText);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    -webkit-animation: bgAnimation var(--gradientTime) ease infinite;
+    -moz-animation: bgAnimation var(--gradientTime) ease infinite;
+    animation: bgAnimation var(--gradientTime) ease infinite;
 }
 
-strong{
-    font-weight: bold;
-}
 
