@@ -158,7 +158,7 @@ function appear(){
     }
 
     //Animates in on first run
-    y.style.display = "flex";
+    y.style.display = "block";
     y.style.animationName = "textTransition";
 
     var buttonText = document.getElementById("submittingButton");
