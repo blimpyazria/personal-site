@@ -1,3 +1,3 @@
 # personal-site
 
-Random nonsensical code behind andrewqiu.com and its redirects.
+My own little site, hosted on GitHub Pages at https://andrewqiu.com.
